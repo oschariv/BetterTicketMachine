@@ -102,12 +102,21 @@ public class TicketMachine
         return amountToRefund;
     }
     
+    /**
+     * El metodo devuelve el dinero total acumulado en el dia si no hay una operacion en curso,
+     * si hay una operacion en curso devuelve un error en forma de -1.
+       */
     public int emptyMachine()
     {
-        int amountTotal;
-        amountTotal = total;
-        total = 0;
-        System.out.println("Total dinero acumulado en el dia: " + amountTotal + " Euros");
-        return amountTotal;
+        if(balance == 0){
+            int amountTotal;
+            amountTotal = total;
+            total = 0;
+            System.out.println("Total dinero acumulado en el dia: " + amountTotal + " Euros");
+            return amountTotal;
+        }
+        else{
+            return -1;
+        }
     }
 }
