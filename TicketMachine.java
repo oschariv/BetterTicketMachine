@@ -17,11 +17,11 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-    
+    // Variable para guardar si se entra en modo premio o no.
     private boolean prize;
-    
+    //Variable para guardar el max de billetes a vender.
     private int contador;
-    
+    //Variable acumuladora para contar los billetes vendidos.
     private int acumulado;
 
     /**
@@ -29,6 +29,7 @@ public class TicketMachine
      */
     public TicketMachine(int cost, boolean premio, int count)
     {
+        //Comprobamos si se entra en modo premio o no.
         if(premio == false){
             price = cost;
             balance = 0;
@@ -114,25 +115,22 @@ public class TicketMachine
                     System.out.println("##################");
                     System.out.println();
                     
+                    
                     acumulado = acumulado + 1;
                     
-                    if(acumulado < contador){
-                        System.out.println("##################");
-                        System.out.println("# The BlueJ Line");
-                        System.out.println("# ¡Ticket de regalo!");
-                        System.out.println("# Ticket");
-                        System.out.println("# 0 cents.");
-                        System.out.println("##################");
-                        System.out.println();
-                        
-                        acumulado = acumulado + 1;
-                    }
-                    else{
-                        System.out.println("Maximo venta de billetes excedido.");
-                    }
-                    
-        
-                   // Update the total collected with the price.
+                    /**
+                     * A los billetes de regalo no les afecta el contador de venta de billetes.
+                       */
+                    System.out.println("##################");
+                    System.out.println("# The BlueJ Line");
+                    System.out.println("# ¡Ticket de regalo!");
+                    System.out.println("# Ticket");
+                    System.out.println("# 0 cents.");
+                    System.out.println("##################");
+                    System.out.println();
+                      
+                                            
+                    // Update the total collected with the price.
                     total = total + price;
                     // Reduce the balance by the prince.
                     balance = balance - price;
