@@ -82,8 +82,10 @@ public class TicketMachine
             balance = balance - price;
         }
         else {
+            int amountLetMoney;
+            amountLetMoney = price -balance;
             System.out.println("You must insert at least: " +
-                               (price - balance) + " more cents.");
+                               amountLetMoney + " more cents.");
                     
         }
     }
@@ -98,5 +100,14 @@ public class TicketMachine
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+    }
+    
+    public int emptyMachine()
+    {
+        int amountTotal;
+        amountTotal = total;
+        total = 0;
+        System.out.println("Total dinero acumulado en el dia: " + amountTotal + " Euros");
+        return amountTotal;
     }
 }
